@@ -123,7 +123,7 @@ export default function Sidebar({ onUserClick, onViewChange, currentView }: Side
           className="flex items-center w-full p-2 space-x-2 rounded-lg hover:bg-gray-100"
         >
           {user.avatarUrl ? (
-            <img src={user.avatarUrl} alt="" className="w-6 h-6 rounded-sm" />
+            <img src={user.avatarUrl} alt="" className="w-8 h-8 rounded-lg" />
           ) : (
             <User className="w-6 h-6 text-gray-600" />
           )}
