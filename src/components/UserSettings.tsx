@@ -1,25 +1,21 @@
 import React, { useState } from "react";
 import {
   User,
-  Settings,
   Bell,
-  Link,
   Globe,
   Shield,
   Users,
   Layout,
   Key,
   Database,
-  Plug,
-  Download,
   LogOut,
   ChevronRight,
 } from "lucide-react";
 
 export default function UserSettings() {
   const [user, setUser] = useState({
-    name: "",
-    email: "",
+    name: "User Name",
+    email: "user@example.com",
     avatar: "https://i.ibb.co/LRnJXhM/PNG-type-banner-frame-For-Editing.jpg",
   });
 
@@ -144,73 +140,4 @@ export default function UserSettings() {
           <div className="max-w-2xl">
             <div className="bg-white rounded-lg shadow">
               <div className="p-6">
-                <h2 className="mb-6 text-lg font-medium">Profile Settings</h2>
-
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-6">
-                    <img
-                      src={user.avatar}
-                      alt=""
-                      className="w-24 h-24 rounded-lg"
-                    />
-                    <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                      Change Photo
-                    </button>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block mb-1 text-sm font-medium text-gray-700">
-                        Display Name
-                      </label>
-                      <input
-                        type="text"
-                        value={user.name}
-                        onChange={(e) =>
-                          setUser({ ...user, name: e.target.value })
-                        }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block mb-1 text-sm font-medium text-gray-700">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        value={user.email}
-                        onChange={(e) =>
-                          setUser({ ...user, email: e.target.value })
-                        }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block mb-1 text-sm font-medium text-gray-700">
-                        Password
-                      </label>
-                      <button className="w-full px-3 py-2 text-left border border-gray-300 rounded-lg hover:bg-gray-50">
-                        Change password
-                      </button>
-                    </div>
-
-                    <div>
-                      <label className="block mb-1 text-sm font-medium text-gray-700">
-                        Two-Factor Authentication
-                      </label>
-                      <button className="w-full px-3 py-2 text-left border border-gray-300 rounded-lg hover:bg-gray-50">
-                        Set up 2FA
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+                <h2 className="mb-6

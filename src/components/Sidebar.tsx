@@ -24,6 +24,7 @@ const Sidebar = () => {
   const [showChat, setShowChat] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [showUpgradePlans, setShowUpgradePlans] = useState(false);
   const [currentView, setCurrentView] = useState("home");
   const menuRef = useRef(null);
 
@@ -159,7 +160,7 @@ const Sidebar = () => {
                 <div className="py-1">
                   <button
                     onClick={() => {
-                      setShowSettings(true);
+                      setShowUpgradePlans(true);
                       setIsMenuOpen(false);
                     }}
                     className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -167,7 +168,10 @@ const Sidebar = () => {
                     <Star className="w-4 h-4 mr-3" />
                     Upgrade to Pro
                   </button>
-                  <button className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <button
+                    onClick={() => alert("Feedback submitted!")}
+                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
                     <MessageSquare className="w-4 h-4 mr-3" />
                     Send Feedback
                   </button>
@@ -219,6 +223,44 @@ const Sidebar = () => {
                     }
                     className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Upgrade Plans Modal */}
+      {showUpgradePlans && (
+        <div className="fixed inset-0 z-50 duration-200 bg-black bg-opacity-50 animate-in fade-in">
+          <div className="fixed inset-y-0 right-0 w-full max-w-2xl duration-300 bg-white shadow-xl animate-in slide-in-from-right">
+            <div className="p-6">
+              <h2 className="mb-4 text-xl font-semibold">Upgrade Plans</h2>
+              <button
+                onClick={() => setShowUpgradePlans(false)}
+                className="absolute p-2 rounded-lg top-4 right-4 hover:bg-gray-100"
+              >
+                ×
+              </button>
+              {/* Simple upgrade plans content */}
+              <div className="space-y-4">
+                <div className="p-4 border rounded-md">
+                  <h3 className="mb-2 text-lg font-semibold">Basic Plan</h3>
+                  <p className="text-sm text-gray-600">
+                    Access to basic features and support.
+                  </p>
+                  <button className="px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+                    Choose Basic
+                  </button>
+                </div>
+                <div className="p-4 border rounded-md">
+                  <h3 className="mb-2 text-lg font-semibold">Pro Plan</h3>
+                  <p className="text-sm text-gray-600">
+                    Access to all features and priority support.
+                  </p>
+                  <button className="px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+                    Choose Pro
+                  </button>
                 </div>
               </div>
             </div>
