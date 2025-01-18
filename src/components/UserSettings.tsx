@@ -18,22 +18,22 @@ import {
 
 export default function UserSettings() {
   const [user, setUser] = useState({
-    name: "John Doe",
-    email: "john@example.com",
+    name: "",
+    email: "",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&q=80",
+      "",
   });
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white border-b border-gray-200 fixed w-full z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="fixed z-10 w-full bg-white border-b border-gray-200">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <span className="text-xl font-semibold">Account Settings</span>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <button className="px-4 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
                 Save Changes
               </button>
             </div>
@@ -41,10 +41,10 @@ export default function UserSettings() {
         </div>
       </nav>
 
-      <div className="flex max-w-7xl mx-auto pt-16">
+      <div className="flex pt-16 mx-auto max-w-7xl">
         <div className="w-64 fixed h-[calc(100vh-4rem)] bg-white border-r border-gray-200">
           <div className="p-4">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center mb-6 space-x-3">
               <img src={user.avatar} alt="" className="w-10 h-10 rounded-lg" />
               <div>
                 <h3 className="font-medium">{user.name}</h3>
@@ -53,7 +53,7 @@ export default function UserSettings() {
             </div>
 
             <div className="space-y-1">
-              <button className="w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg bg-blue-50 text-blue-700">
+              <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-blue-700 rounded-lg bg-blue-50">
                 <div className="flex items-center space-x-3">
                   <User className="w-4 h-4" />
                   <span>My Account</span>
@@ -61,7 +61,7 @@ export default function UserSettings() {
                 <ChevronRight className="w-4 h-4" />
               </button>
 
-              <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+              <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                 <div className="flex items-center space-x-3">
                   <Bell className="w-4 h-4" />
                   <span>Notifications</span>
@@ -69,7 +69,7 @@ export default function UserSettings() {
                 <ChevronRight className="w-4 h-4" />
               </button>
 
-              <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+              <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                 <div className="flex items-center space-x-3">
                   <Globe className="w-4 h-4" />
                   <span>Language & Region</span>
@@ -77,7 +77,7 @@ export default function UserSettings() {
                 <ChevronRight className="w-4 h-4" />
               </button>
 
-              <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+              <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                 <div className="flex items-center space-x-3">
                   <Shield className="w-4 h-4" />
                   <span>Security</span>
@@ -87,11 +87,11 @@ export default function UserSettings() {
             </div>
 
             <div className="mt-8">
-              <h4 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              <h4 className="px-3 mb-2 text-xs font-semibold tracking-wider text-gray-500 uppercase">
                 Workspace
               </h4>
               <div className="space-y-1">
-                <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                   <div className="flex items-center space-x-3">
                     <Users className="w-4 h-4" />
                     <span>Members</span>
@@ -99,7 +99,7 @@ export default function UserSettings() {
                   <ChevronRight className="w-4 h-4" />
                 </button>
 
-                <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                   <div className="flex items-center space-x-3">
                     <Layout className="w-4 h-4" />
                     <span>Billing</span>
@@ -110,11 +110,11 @@ export default function UserSettings() {
             </div>
 
             <div className="mt-8">
-              <h4 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              <h4 className="px-3 mb-2 text-xs font-semibold tracking-wider text-gray-500 uppercase">
                 Advanced
               </h4>
               <div className="space-y-1">
-                <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                   <div className="flex items-center space-x-3">
                     <Key className="w-4 h-4" />
                     <span>API Keys</span>
@@ -122,7 +122,7 @@ export default function UserSettings() {
                   <ChevronRight className="w-4 h-4" />
                 </button>
 
-                <button className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                <button className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50">
                   <div className="flex items-center space-x-3">
                     <Database className="w-4 h-4" />
                     <span>Import/Export</span>
@@ -133,7 +133,7 @@ export default function UserSettings() {
             </div>
 
             <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
-              <button className="w-full flex items-center justify-center space-x-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg">
+              <button className="flex items-center justify-center w-full px-3 py-2 space-x-2 text-sm text-red-600 rounded-lg hover:bg-red-50">
                 <LogOut className="w-4 h-4" />
                 <span>Sign Out</span>
               </button>
@@ -141,11 +141,11 @@ export default function UserSettings() {
           </div>
         </div>
 
-        <div className="flex-1 ml-64 p-8">
+        <div className="flex-1 p-8 ml-64">
           <div className="max-w-2xl">
             <div className="bg-white rounded-lg shadow">
               <div className="p-6">
-                <h2 className="text-lg font-medium mb-6">Profile Settings</h2>
+                <h2 className="mb-6 text-lg font-medium">Profile Settings</h2>
 
                 <div className="space-y-6">
                   <div className="flex items-center space-x-6">
@@ -161,7 +161,7 @@ export default function UserSettings() {
 
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block mb-1 text-sm font-medium text-gray-700">
                         Display Name
                       </label>
                       <input
@@ -175,7 +175,7 @@ export default function UserSettings() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block mb-1 text-sm font-medium text-gray-700">
                         Email
                       </label>
                       <input
@@ -189,7 +189,7 @@ export default function UserSettings() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block mb-1 text-sm font-medium text-gray-700">
                         Password
                       </label>
                       <button className="w-full px-3 py-2 text-left border border-gray-300 rounded-lg hover:bg-gray-50">
@@ -198,7 +198,7 @@ export default function UserSettings() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block mb-1 text-sm font-medium text-gray-700">
                         Two-Factor Authentication
                       </label>
                       <button className="w-full px-3 py-2 text-left border border-gray-300 rounded-lg hover:bg-gray-50">
