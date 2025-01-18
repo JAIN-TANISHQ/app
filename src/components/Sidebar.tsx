@@ -28,9 +28,9 @@ interface SidebarProps {
 
 export default function Sidebar({ onUserClick, onViewChange, currentView }: SidebarProps) {
   const [user] = useState<UserAccount>({
-    name: 'John Doe',
-    email: 'john@example.com',
-    avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80'
+    name: "User",
+    email: "user@example.com",
+    avatarUrl: "https://i.ibb.co/ydRFb4S/PNG-type-banner-frame-For-Editing.jpg",
   });
 
   const [showChat, setShowChat] = useState(false);
@@ -45,20 +45,20 @@ export default function Sidebar({ onUserClick, onViewChange, currentView }: Side
 
   return (
     <div className="fixed left-0 top-0 bottom-0 w-60 bg-[#fbfbfa] border-r border-[#e8e8e8] flex flex-col">
-      <div className="p-3 flex items-center space-x-2">
+      <div className="flex items-center p-3 space-x-2">
         <button className="w-6 h-6 bg-gray-100 hover:bg-gray-200 rounded-[2px] flex items-center justify-center">
-          <span className="font-medium text-sm">A</span>
+          <span className="text-sm font-medium">A</span>
         </button>
         <ChevronDown className="w-4 h-4 text-gray-500" />
       </div>
       
       <div className="px-3 py-1">
         <div className="relative">
-          <Search className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Search className="absolute w-4 h-4 text-gray-400 -translate-y-1/2 left-2 top-1/2" />
           <input 
             type="text"
             placeholder="Search"
-            className="w-full pl-8 pr-3 py-1 bg-gray-100 rounded-sm text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full py-1 pl-8 pr-3 text-sm bg-gray-100 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
         </div>
       </div>
@@ -80,11 +80,11 @@ export default function Sidebar({ onUserClick, onViewChange, currentView }: Side
         </div>
 
         <div className="mt-4">
-          <div className="px-3 flex items-center justify-between">
+          <div className="flex items-center justify-between px-3">
             <span className="text-xs font-medium text-gray-500 uppercase">Workspaces</span>
             <button 
               onClick={() => onViewChange('workspace')}
-              className="p-1 hover:bg-gray-100 rounded-sm"
+              className="p-1 rounded-sm hover:bg-gray-100"
             >
               <Plus className="w-3 h-3 text-gray-500" />
             </button>
@@ -92,23 +92,23 @@ export default function Sidebar({ onUserClick, onViewChange, currentView }: Side
         </div>
 
         <div className="mt-4">
-          <div className="px-3 flex items-center justify-between">
+          <div className="flex items-center justify-between px-3">
             <span className="text-xs font-medium text-gray-500 uppercase">Chat</span>
             <button 
               onClick={() => setShowChat(!showChat)}
-              className="p-1 hover:bg-gray-100 rounded-sm"
+              className="p-1 rounded-sm hover:bg-gray-100"
             >
               <MessageSquare className="w-3 h-3 text-gray-500" />
             </button>
           </div>
           {showChat && (
-            <div className="mt-2 px-3">
-              <div className="bg-white p-3 rounded-lg shadow-sm">
-                <div className="flex items-center space-x-2 mb-2">
+            <div className="px-3 mt-2">
+              <div className="p-3 bg-white rounded-lg shadow-sm">
+                <div className="flex items-center mb-2 space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span className="text-sm text-gray-600">2 users online</span>
                 </div>
-                <button className="w-full px-3 py-2 text-sm text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100">
+                <button className="w-full px-3 py-2 text-sm text-blue-600 rounded-md bg-blue-50 hover:bg-blue-100">
                   Start Chat
                 </button>
               </div>
@@ -120,7 +120,7 @@ export default function Sidebar({ onUserClick, onViewChange, currentView }: Side
       <div className="border-t border-[#e8e8e8] p-3">
         <button 
           onClick={onUserClick}
-          className="w-full flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg"
+          className="flex items-center w-full p-2 space-x-2 rounded-lg hover:bg-gray-100"
         >
           {user.avatarUrl ? (
             <img src={user.avatarUrl} alt="" className="w-6 h-6 rounded-sm" />
