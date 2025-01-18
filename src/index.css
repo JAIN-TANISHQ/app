@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  @apply bg-[#fbfbfa];
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+  @apply w-4 h-4 text-gray-600 bg-white border-gray-300 rounded-sm focus:ring-gray-500 focus:ring-1;
+}
+
+/* Smooth transitions */
+a, button {
+  @apply transition-colors duration-100;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
