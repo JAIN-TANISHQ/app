@@ -12,6 +12,7 @@ import {
   MessageSquare,
   Star,
   Calendar,
+  Check,
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -236,46 +237,136 @@ const Sidebar = () => {
 
       {/* Upgrade Plans Modal */}
       {showUpgradePlans && (
-        <div className="fixed inset-0 z-50 duration-200 bg-black bg-opacity-50 animate-in fade-in">
-          <div className="fixed inset-y-0 right-0 w-full max-w-2xl duration-300 bg-white shadow-xl animate-in slide-in-from-right">
-            <div className="p-6">
-              <h2 className="mb-4 text-xl font-semibold">Upgrade Plans</h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 duration-200 bg-black/50 backdrop-blur-sm animate-in fade-in">
+          <div className="w-full max-w-5xl p-6 bg-white shadow-xl rounded-2xl">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Choose your plan
+                </h2>
+                <p className="mt-2 text-gray-600">
+                  Select a plan that best fits your needs
+                </p>
+              </div>
               <button
                 onClick={() => setShowUpgradePlans(false)}
-                className="absolute p-2 rounded-lg top-4 right-4 hover:bg-gray-100"
+                className="p-2 text-gray-500 rounded-lg hover:bg-gray-100"
               >
                 ×
               </button>
-              {/* Upgrade plans content with image */}
-              <div className="space-y-4">
-                <div className="p-4 border rounded-md">
-                  <h3 className="mb-2 text-lg font-semibold">Basic Plan</h3>
-                  <p className="text-sm text-gray-600">
-                    Access to basic features and support.
-                  </p>
-                  <img
-                    src="/img/subscription/basic-plan.png"
-                    alt="Basic Plan"
-                    className="w-full h-auto mt-2"
-                  />
-                  <button className="px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
-                    Choose Basic
-                  </button>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              {/* Free Plan */}
+              <div className="relative p-6 bg-white border rounded-xl">
+                <h3 className="text-xl font-semibold text-gray-900">Free</h3>
+                <p className="mt-2 text-sm text-gray-500">
+                  Perfect for getting started
+                </p>
+                <div className="my-8">
+                  <span className="text-5xl font-bold">$0</span>
+                  <span className="text-gray-500">/month</span>
                 </div>
-                <div className="p-4 border rounded-md">
-                  <h3 className="mb-2 text-lg font-semibold">Pro Plan</h3>
-                  <p className="text-sm text-gray-600">
-                    Access to all features and priority support.
-                  </p>
-                  <img
-                    src="/img/subscription/pro-plan.png"
-                    alt="Pro Plan"
-                    className="w-full h-auto mt-2"
-                  />
-                  <button className="px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
-                    Choose Pro
-                  </button>
+                <button className="w-full px-4 py-2 text-gray-700 transition-colors border rounded-lg hover:bg-gray-50">
+                  Get started for free
+                </button>
+                <ul className="mt-8 space-y-4">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Up to 5 project members
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    2GB storage
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Basic integrations
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Community support
+                  </li>
+                </ul>
+              </div>
+
+              {/* Pro Plan */}
+              <div className="relative p-6 bg-black border-2 border-black rounded-xl">
+                <div className="absolute px-3 py-1 text-xs text-white rounded-full bg-gradient-to-r from-pink-500 to-purple-500 -top-3 right-6">
+                  Most popular
                 </div>
+                <h3 className="text-xl font-semibold text-white">Pro</h3>
+                <p className="mt-2 text-sm text-gray-400">
+                  Perfect for growing teams
+                </p>
+                <div className="my-8">
+                  <span className="text-5xl font-bold text-white">$9</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <button className="w-full px-4 py-2 text-black transition-colors bg-white rounded-lg hover:bg-gray-100">
+                  Sign up now
+                </button>
+                <ul className="mt-8 space-y-4">
+                  <li className="flex items-center text-sm text-gray-300">
+                    <Check className="w-5 h-5 mr-3 text-green-400" />
+                    Up to 50 project members
+                  </li>
+                  <li className="flex items-center text-sm text-gray-300">
+                    <Check className="w-5 h-5 mr-3 text-green-400" />
+                    50GB storage
+                  </li>
+                  <li className="flex items-center text-sm text-gray-300">
+                    <Check className="w-5 h-5 mr-3 text-green-400" />
+                    Advanced integrations
+                  </li>
+                  <li className="flex items-center text-sm text-gray-300">
+                    <Check className="w-5 h-5 mr-3 text-green-400" />
+                    Priority support
+                  </li>
+                  <li className="flex items-center text-sm text-gray-300">
+                    <Check className="w-5 h-5 mr-3 text-green-400" />
+                    Advanced analytics
+                  </li>
+                </ul>
+              </div>
+
+              {/* Business Plan */}
+              <div className="relative p-6 bg-white border rounded-xl">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Business
+                </h3>
+                <p className="mt-2 text-sm text-gray-500">
+                  Perfect for large organizations
+                </p>
+                <div className="my-8">
+                  <span className="text-5xl font-bold">$19</span>
+                  <span className="text-gray-500">/month</span>
+                </div>
+                <button className="w-full px-4 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
+                  Sign up now
+                </button>
+                <ul className="mt-8 space-y-4">
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Unlimited project members
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    200GB storage
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Custom integrations
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Dedicated account manager
+                  </li>
+                  <li className="flex items-center text-sm text-gray-600">
+                    <Check className="w-5 h-5 mr-3 text-green-500" />
+                    Advanced security features
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -294,19 +385,16 @@ const Sidebar = () => {
               >
                 ×
               </button>
-              {/* Feedback form content */}
               <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Feedback
-                  </label>
-                  <textarea
-                    rows="4"
-                    className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
-                    placeholder="Enter your feedback here..."
-                  ></textarea>
-                </div>
-                <button className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+                <textarea
+                  placeholder="Write your feedback here"
+                  className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
+                  rows={5}
+                ></textarea>
+                <button
+                  onClick={() => setShowFeedback(false)}
+                  className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700"
+                >
                   Submit
                 </button>
               </div>
