@@ -30,7 +30,7 @@ export default function Sidebar({ onUserClick, onViewChange, currentView }: Side
   const [user] = useState<UserAccount>({
     name: "User",
     email: "user@example.com",
-    avatarUrl: "https://i.ibb.co/ydRFb4S/PNG-type-banner-frame-For-Editing.jpg",
+    avatarUrl: "https://i.ibb.co/LRnJXhM/PNG-type-banner-frame-For-Editing.jpg",
   });
 
   const [showChat, setShowChat] = useState(false);

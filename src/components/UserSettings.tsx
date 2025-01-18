@@ -20,8 +20,7 @@ export default function UserSettings() {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    avatar:
-      "",
+    avatar: "https://i.ibb.co/LRnJXhM/PNG-type-banner-frame-For-Editing.jpg",
   });
 
   return (
